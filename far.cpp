@@ -21,13 +21,13 @@ int main( int argc, char* argv[]) {
         std::cout << "Welcome to F.A.R." << std::endl;
 
         // Loop through and print all arguments except argv[0]
-        if (argc == 3) {
+        if (argc == 4) {
             userFPath = argv[1];
             findWord = argv[2];
             replaceWord = argv[3];
         }
 
-        if (argc == 4) {
+        if (argc == 5) {
             userFPath = argv[1];
             outputFPath = argv[2];
             findWord = argv[3];
@@ -35,7 +35,7 @@ int main( int argc, char* argv[]) {
 
         }
 
-        if (argc > 4) {
+        if (argc > 5) {
             std::cerr << "Error! Too many arguments entered" << std::endl;
             return 0;
         }
@@ -73,18 +73,18 @@ int main( int argc, char* argv[]) {
     //Finding and replacing
     while (inputFile >> fileWord) {
     if (fileWord == findWord) {
-        std::cout << " " << replaceWord;
+        outputFile << " " << replaceWord;
         replaceCount++;
         wordCount++;
     } else {
-        std::cout << " " << fileWord;
+        outputFile << " " << fileWord;
         wordCount++;
         }
     }
     inputFile.close();
     outputFile.close();
 
-    std::cout << "Process Compleat!" << std::endl;
+    std::cout << "Process Complete!" << std::endl;
     std::cout << "Total Words Checked: " << wordCount << std::endl;
     std::cout << "Total Words Replaced: " << replaceCount << std::endl;
     std::cout << "The output file is located at: " << outputFPath << std::endl;
