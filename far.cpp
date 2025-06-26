@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <fstream>
 
-int main() {
+int main( int argc, char* argv[]) {
 
 //Variable declarations
 
@@ -16,15 +16,41 @@ int main() {
     int replaceCount = 0;
 
     //Getting user input
-    std::cout << "Welcome to F.A.R." << std::endl;
-    std::cout << "File path: ";
-    std::cin >> userFPath;
-    std::cout << "Output Path: ";
-    std::cin >> outputFPath;
-    std::cout << "Find: ";
-    std::cin >> findWord;
-    std::cout << "Replace: ";
-    std::cin >> replaceWord;
+
+    if (argc >= 2) {
+        std::cout << "Welcome to F.A.R." << std::endl;
+
+        // Loop through and print all arguments except argv[0]
+        if (argc == 3) {
+            userFPath = argv[1];
+            findWord = argv[2];
+            replaceWord = argv[3];
+        }
+
+        if (argc == 4) {
+            userFPath = argv[1];
+            outputFPath = argv[2];
+            findWord = argv[3];
+            replaceWord = argv[4];
+
+        }
+
+        if (argc > 4) {
+            std::cerr << "Error! Too many arguments entered" << std::endl;
+            return 0;
+        }
+    } else {
+        std::cout << "Welcome to F.A.R." << std::endl;
+        std::cout << "File path: ";
+        std::cin >> userFPath;
+        std::cout << "Output Path: ";
+        std::cin >> outputFPath;
+        std::cout << "Find: ";
+        std::cin >> findWord;
+        std::cout << "Replace: ";
+        std::cin >> replaceWord;
+    }
+
 
     //Opening and checking the validity of the user provided file
     std::ifstream inputFile;
