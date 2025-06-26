@@ -1,9 +1,6 @@
 Accept multiple types of input files
-Have streamlined entry
-    far file.txt helllo hello 
 Create a relese with a bash file to allow for instillation to path and local compile
 Check if output file already exists
 Expand functionality to charecters and sentances
 Keep formatting
-Count how many words were read and how many words were replaced
 Use vectors to store words to keep formatting and allow charecters and sentances to be checked
