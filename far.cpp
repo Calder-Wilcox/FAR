@@ -33,7 +33,6 @@ int main() {
     if (!inputFile.is_open()) {
         std::cerr << "Error: Could not open input file." << std::endl;
         return 0;
-        
     }
 
     //Opening and checking the validity of the output file
