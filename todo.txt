@@ -1,0 +1,7 @@
+Accept multiple types of input files
+Create a relese with a bash file to allow for instillation to path and local compile
+Check if output file already exists
+Expand functionality to charecters and sentances
+Keep formatting
+Use vectors to store words to keep formatting and allow charecters and sentances to be checked
+    This can be acomplished with std::regex
